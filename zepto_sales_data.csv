@@ -1,0 +1,51 @@
+Date,Order_ID,Product_Category,Product_Name,Quantity,Unit_Price,Total_Sales,Customer_ID,Outlet_Tier,City,Customer_Rating,Delivery_Time_Minutes,Payment_Method
+2024-01-15,ZP001,Fruits & Vegetables,Bananas,2,45.00,90.00,C001,Tier 1,Mumbai,4.5,12,UPI
+2024-01-15,ZP002,Dairy & Eggs,Milk 1L,3,65.00,195.00,C002,Tier 2,Delhi,4.2,15,Card
+2024-01-15,ZP003,Snacks & Beverages,Chips,4,25.00,100.00,C003,Tier 1,Mumbai,4.8,10,Cash
+2024-01-16,ZP004,Personal Care,Shampoo,1,180.00,180.00,C004,Tier 3,Bangalore,4.0,20,UPI
+2024-01-16,ZP005,Household Items,Detergent,2,120.00,240.00,C005,Tier 2,Mumbai,4.3,18,Card
+2024-01-17,ZP006,Fruits & Vegetables,Apples,3,80.00,240.00,C006,Tier 1,Delhi,4.7,8,UPI
+2024-01-17,ZP007,Dairy & Eggs,Yogurt,5,35.00,175.00,C007,Tier 2,Bangalore,4.1,14,Cash
+2024-01-18,ZP008,Snacks & Beverages,Cold Drink,6,40.00,240.00,C008,Tier 1,Mumbai,4.6,11,UPI
+2024-01-18,ZP009,Personal Care,Toothpaste,2,85.00,170.00,C009,Tier 3,Delhi,3.9,22,Card
+2024-01-19,ZP010,Household Items,Soap,4,45.00,180.00,C010,Tier 2,Bangalore,4.4,16,UPI
+2024-01-20,ZP011,Fruits & Vegetables,Tomatoes,2,30.00,60.00,C011,Tier 1,Mumbai,4.2,9,Cash
+2024-01-20,ZP012,Dairy & Eggs,Cheese,1,150.00,150.00,C012,Tier 2,Delhi,4.5,13,Card
+2024-01-21,ZP013,Snacks & Beverages,Biscuits,3,55.00,165.00,C013,Tier 1,Mumbai,4.8,7,UPI
+2024-01-21,ZP014,Personal Care,Face Wash,1,95.00,95.00,C014,Tier 3,Bangalore,4.0,19,Cash
+2024-01-22,ZP015,Household Items,Cleaning Spray,2,75.00,150.00,C015,Tier 2,Mumbai,4.1,17,Card
+2024-01-23,ZP016,Fruits & Vegetables,Oranges,4,60.00,240.00,C016,Tier 1,Delhi,4.6,10,UPI
+2024-01-23,ZP017,Dairy & Eggs,Butter,2,85.00,170.00,C017,Tier 2,Bangalore,4.3,15,Cash
+2024-01-24,ZP018,Snacks & Beverages,Juice,3,70.00,210.00,C018,Tier 1,Mumbai,4.7,12,Card
+2024-01-24,ZP019,Personal Care,Deodorant,1,125.00,125.00,C019,Tier 3,Delhi,3.8,21,UPI
+2024-01-25,ZP020,Household Items,Tissue Paper,5,35.00,175.00,C020,Tier 2,Bangalore,4.2,14,Cash
+2024-02-01,ZP021,Fruits & Vegetables,Grapes,2,120.00,240.00,C021,Tier 1,Mumbai,4.9,8,UPI
+2024-02-01,ZP022,Dairy & Eggs,Eggs 12pc,3,90.00,270.00,C022,Tier 2,Delhi,4.4,16,Card
+2024-02-02,ZP023,Snacks & Beverages,Cookies,4,45.00,180.00,C023,Tier 1,Mumbai,4.5,11,Cash
+2024-02-02,ZP024,Personal Care,Body Lotion,1,165.00,165.00,C024,Tier 3,Bangalore,4.1,18,UPI
+2024-02-03,ZP025,Household Items,Dishwash Liquid,2,95.00,190.00,C025,Tier 2,Mumbai,4.3,13,Card
+2024-02-04,ZP026,Fruits & Vegetables,Spinach,3,25.00,75.00,C026,Tier 1,Delhi,4.0,9,Cash
+2024-02-04,ZP027,Dairy & Eggs,Paneer,1,180.00,180.00,C027,Tier 2,Bangalore,4.6,15,UPI
+2024-02-05,ZP028,Snacks & Beverages,Chocolate,6,30.00,180.00,C028,Tier 1,Mumbai,4.8,10,Card
+2024-02-05,ZP029,Personal Care,Hair Oil,1,110.00,110.00,C029,Tier 3,Delhi,3.9,20,Cash
+2024-02-06,ZP030,Household Items,Air Freshener,2,65.00,130.00,C030,Tier 2,Bangalore,4.2,17,UPI
+2024-03-01,ZP031,Fruits & Vegetables,Carrots,2,40.00,80.00,C031,Tier 1,Mumbai,4.3,12,Card
+2024-03-01,ZP032,Dairy & Eggs,Cream,3,55.00,165.00,C032,Tier 2,Delhi,4.1,14,Cash
+2024-03-02,ZP033,Snacks & Beverages,Nuts,4,150.00,600.00,C033,Tier 1,Mumbai,4.7,8,UPI
+2024-03-02,ZP034,Personal Care,Moisturizer,1,145.00,145.00,C034,Tier 3,Bangalore,4.0,19,Card
+2024-03-03,ZP035,Household Items,Laundry Detergent,2,110.00,220.00,C035,Tier 2,Mumbai,4.4,16,Cash
+2024-03-04,ZP036,Fruits & Vegetables,Onions,3,35.00,105.00,C036,Tier 1,Delhi,4.2,10,UPI
+2024-03-04,ZP037,Dairy & Eggs,Lassi,5,45.00,225.00,C037,Tier 2,Bangalore,4.5,13,Card
+2024-03-05,ZP038,Snacks & Beverages,Energy Drink,2,80.00,160.00,C038,Tier 1,Mumbai,4.6,9,Cash
+2024-03-05,ZP039,Personal Care,Sunscreen,1,195.00,195.00,C039,Tier 3,Delhi,4.1,21,UPI
+2024-03-06,ZP040,Household Items,Garbage Bags,4,25.00,100.00,C040,Tier 2,Bangalore,4.0,18,Card
+2024-04-01,ZP041,Fruits & Vegetables,Mangoes,2,100.00,200.00,C041,Tier 1,Mumbai,4.8,7,UPI
+2024-04-01,ZP042,Dairy & Eggs,Ghee,1,250.00,250.00,C042,Tier 2,Delhi,4.3,15,Cash
+2024-04-02,ZP043,Snacks & Beverages,Popcorn,3,40.00,120.00,C043,Tier 1,Mumbai,4.5,11,Card
+2024-04-02,ZP044,Personal Care,Talcum Powder,1,75.00,75.00,C044,Tier 3,Bangalore,3.8,22,UPI
+2024-04-03,ZP045,Household Items,Floor Cleaner,2,85.00,170.00,C045,Tier 2,Mumbai,4.2,14,Cash
+2024-04-04,ZP046,Fruits & Vegetables,Lemons,4,20.00,80.00,C046,Tier 1,Delhi,4.4,8,Card
+2024-04-04,ZP047,Dairy & Eggs,Buttermilk,6,30.00,180.00,C047,Tier 2,Bangalore,4.1,16,UPI
+2024-04-05,ZP048,Snacks & Beverages,Ice Cream,2,120.00,240.00,C048,Tier 1,Mumbai,4.9,10,Cash
+2024-04-05,ZP049,Personal Care,Razor,1,85.00,85.00,C049,Tier 3,Delhi,4.0,20,Card
+2024-04-06,ZP050,Household Items,Candles,3,35.00,105.00,C050,Tier 2,Bangalore,4.3,17,UPI

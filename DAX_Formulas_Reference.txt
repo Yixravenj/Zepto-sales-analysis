@@ -1,0 +1,228 @@
+ZEPTO SALES ANALYSIS - DAX FORMULAS REFERENCE
+==============================================
+
+MEASURES FOR SALES ANALYSIS:
+-----------------------------
+
+1. Total Sales
+Total Sales = SUM('zepto_sales_data'[Total_Sales])
+
+2. Total Orders
+Total Orders = COUNTROWS('zepto_sales_data')
+
+3. Average Order Value (AOV)
+Average Order Value = DIVIDE([Total Sales], [Total Orders], 0)
+
+4. Total Quantity Sold
+Total Quantity = SUM('zepto_sales_data'[Quantity])
+
+5. Average Rating
+Average Rating = AVERAGE('zepto_sales_data'[Customer_Rating])
+
+6. Average Delivery Time
+Average Delivery Time = AVERAGE('zepto_sales_data'[Delivery_Time_Minutes])
+
+7. Sales Growth (Month over Month)
+Sales Growth MoM = 
+VAR CurrentMonthSales = [Total Sales]
+VAR PreviousMonthSales = CALCULATE(
+    [Total Sales],
+    DATEADD('zepto_sales_data'[Date], -1, MONTH)
+)
+RETURN
+DIVIDE(CurrentMonthSales - PreviousMonthSales, PreviousMonthSales, 0)
+
+8. Top Product Category by Sales
+Top Category Sales = 
+CALCULATE(
+    [Total Sales],
+    TOPN(1, 
+        SUMMARIZE('zepto_sales_data', 'zepto_sales_data'[Product_Category], "Sales", [Total Sales]),
+        [Sales], DESC
+    )
+)
+
+9. Tier 1 Sales Performance
+Tier 1 Sales = 
+CALCULATE(
+    [Total Sales],
+    'zepto_sales_data'[Outlet_Tier] = "Tier 1"
+)
+
+10. High Rating Orders (>= 4.5)
+High Rating Orders = 
+CALCULATE(
+    [Total Orders],
+    'zepto_sales_data'[Customer_Rating] >= 4.5
+)
+
+11. Fast Delivery Orders (<= 12 minutes)
+Fast Delivery Orders = 
+CALCULATE(
+    [Total Orders],
+    'zepto_sales_data'[Delivery_Time_Minutes] <= 12
+)
+
+12. UPI Payment Share
+UPI Payment Share = 
+DIVIDE(
+    CALCULATE([Total Orders], 'zepto_sales_data'[Payment_Method] = "UPI"),
+    [Total Orders],
+    0
+)
+
+13. Weekend Sales
+Weekend Sales = 
+CALCULATE(
+    [Total Sales],
+    WEEKDAY('zepto_sales_data'[Date], 2) >= 6
+)
+
+14. City Performance Rank
+City Rank = 
+RANKX(
+    ALL('zepto_sales_data'[City]),
+    [Total Sales],
+    ,
+    DESC
+)
+
+15. Category Sales Percentage
+Category Sales % = 
+DIVIDE(
+    [Total Sales],
+    CALCULATE([Total Sales], ALL('zepto_sales_data'[Product_Category])),
+    0
+)
+
+CALCULATED COLUMNS:
+-------------------
+
+1. Month-Year
+Month-Year = FORMAT('zepto_sales_data'[Date], "MMM YYYY")
+
+2. Day of Week
+Day of Week = FORMAT('zepto_sales_data'[Date], "dddd")
+
+3. Sales Performance Category
+Sales Performance = 
+SWITCH(
+    TRUE(),
+    'zepto_sales_data'[Total_Sales] >= 200, "High",
+    'zepto_sales_data'[Total_Sales] >= 100, "Medium",
+    "Low"
+)
+
+4. Delivery Performance
+Delivery Performance = 
+SWITCH(
+    TRUE(),
+    'zepto_sales_data'[Delivery_Time_Minutes] <= 10, "Excellent",
+    'zepto_sales_data'[Delivery_Time_Minutes] <= 15, "Good",
+    'zepto_sales_data'[Delivery_Time_Minutes] <= 20, "Average",
+    "Poor"
+)
+
+5. Customer Satisfaction
+Customer Satisfaction = 
+SWITCH(
+    TRUE(),
+    'zepto_sales_data'[Customer_Rating] >= 4.5, "Excellent",
+    'zepto_sales_data'[Customer_Rating] >= 4.0, "Good",
+    'zepto_sales_data'[Customer_Rating] >= 3.5, "Average",
+    "Poor"
+)
+
+6. Revenue Bucket
+Revenue Bucket = 
+SWITCH(
+    TRUE(),
+    'zepto_sales_data'[Total_Sales] >= 250, "Premium",
+    'zepto_sales_data'[Total_Sales] >= 150, "Standard",
+    "Basic"
+)
+
+TIME INTELLIGENCE MEASURES:
+---------------------------
+
+1. Previous Month Sales
+Previous Month Sales = 
+CALCULATE(
+    [Total Sales],
+    DATEADD('zepto_sales_data'[Date], -1, MONTH)
+)
+
+2. Year to Date Sales
+YTD Sales = 
+TOTALYTD(
+    [Total Sales],
+    'zepto_sales_data'[Date]
+)
+
+3. Quarter to Date Sales
+QTD Sales = 
+TOTALQTD(
+    [Total Sales],
+    'zepto_sales_data'[Date]
+)
+
+4. Rolling 30 Days Sales
+Rolling 30 Days Sales = 
+CALCULATE(
+    [Total Sales],
+    DATESINPERIOD(
+        'zepto_sales_data'[Date],
+        MAX('zepto_sales_data'[Date]),
+        -30,
+        DAY
+    )
+)
+
+ADVANCED ANALYTICS:
+-------------------
+
+1. Sales Trend
+Sales Trend = 
+VAR CurrentValue = [Total Sales]
+VAR PreviousValue = CALCULATE(
+    [Total Sales],
+    DATEADD('zepto_sales_data'[Date], -1, MONTH)
+)
+RETURN
+SWITCH(
+    TRUE(),
+    CurrentValue > PreviousValue, "↗️ Increasing",
+    CurrentValue < PreviousValue, "↘️ Decreasing",
+    "➡️ Stable"
+)
+
+2. Customer Loyalty Score
+Customer Loyalty Score = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('zepto_sales_data'),
+        'zepto_sales_data'[Customer_Rating] >= 4.0
+    ),
+    COUNTROWS('zepto_sales_data'),
+    0
+) * 100
+
+3. Operational Efficiency
+Operational Efficiency = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('zepto_sales_data'),
+        'zepto_sales_data'[Delivery_Time_Minutes] <= 15
+    ),
+    COUNTROWS('zepto_sales_data'),
+    0
+) * 100
+
+SLICERS AND FILTERS SETUP:
+---------------------------
+- Date Range Slicer (Date field)
+- Product Category Slicer (Product_Category field)
+- City Slicer (City field)
+- Outlet Tier Slicer (Outlet_Tier field)
+- Payment Method Slicer (Payment_Method field)
+- Customer Rating Range (Customer_Rating field)

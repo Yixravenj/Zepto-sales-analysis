@@ -241,6 +241,3 @@ This project demonstrates:
 
 ---
 
-**Built with ❤️ using Power BI Desktop**
-
-*This project showcases the power of data visualization in transforming raw business data into actionable insights for improved decision-making and business growth.*
